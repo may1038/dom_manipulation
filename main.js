@@ -94,9 +94,14 @@ let formData = [
       if(userInfo.type == "textarea") {
           let textarea = document.createElement("textarea")
           fieldsDiv.append(textarea)
+          textarea.placeholder = userInfo.label
       } else if(userInfo.type == "select") {
          let select = document.createElement("select")
          fieldsDiv.append(select)
+         let selectPlaceHolder = document.createElement("option")
+         selectPlaceHolder.innerHTML = "Select Language..."
+         select.append(selectPlaceHolder)
+
          for (let j = 0; j < userInfo.options.length; j++) {
            let option = document.createElement("option")
            select.append(option)
